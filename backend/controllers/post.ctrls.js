@@ -14,3 +14,13 @@ const index = (req, res) => {
         })
     })
 }
+
+// find by id
+const getById = (req, res) => {
+    db.Post.find({ postId: req.params.id }, (error, posts) => {
+        if (error) return(404).json({ error: error.message })
+        return res.status(200).json({
+            posts,requestedAt: new Date().toLocaleDateString()
+        })
+    })
+}
