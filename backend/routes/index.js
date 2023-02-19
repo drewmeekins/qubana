@@ -6,3 +6,5 @@ const ctrls = require('../controllers')
 // post routes
 router.get('/post/', ctrls.post.index)
 router.get('/post/:id', ctrls.post.getById)
+
+module.exports = router
